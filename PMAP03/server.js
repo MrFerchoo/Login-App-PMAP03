@@ -2,10 +2,13 @@ const express = require("express");
 const session = require("express-session");
 const path = require("path");
 const got =  require("got");
+const cors = require('cors');
+
 var fs = require('fs');
 var https = require('https');
 
-const API_PATH = "http://192.168.50.133:3000/api/users/";
+
+const API_PATH = "http://172.18.70.41:4000/api/users/";
 const API_RESOURCE_BYUSERNAME = "byusername/";
 
 var app = express();
@@ -13,6 +16,8 @@ var app = express();
 var privateKey  = fs.readFileSync('./sslcerts/selfsigned.key', 'utf8');
 var certificate = fs.readFileSync('./sslcerts/selfsigned.crt', 'utf8');
 var credentials = {key: privateKey, cert: certificate};
+
+app.use(cors());
 
 // your express configuration here
 var httpsServer = https.createServer(credentials, app);

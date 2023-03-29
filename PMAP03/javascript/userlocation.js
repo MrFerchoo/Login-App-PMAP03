@@ -1,4 +1,4 @@
-//const API_URL_UPDATE_LOCATION = "http://172.17.240.247:4001/api/users/updateUserLocation";
+const API_URL_UPDATE_LOCATION = "http://172.18.70.41:4001/api/users/updateUserLocation";
 var reqcount = 0;
 var details = el('details');
 var options = {
